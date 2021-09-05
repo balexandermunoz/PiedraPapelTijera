@@ -1,0 +1,88 @@
+body {
+    background-color: black;
+}
+
+h1,h2, p, .Results {
+    color: blanchedalmond;
+    text-align: center;
+    font-family: 'Playball', cursive;
+}
+
+b{
+    color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+/*Estilo de los iconos Rock paper sissors */
+.Images__img, .Images__img_2 {
+    width: 100px;
+    height: 100px;
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
+    background-color:rgb(46, 46, 65);
+    border: 2px solid rgb(66, 66, 66);
+    border-radius: 20%;
+}
+
+/*Pasar el mouse por encima de las imagenes - Sombra y las vuelve un poquito grandes*/ 
+.Images__img:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    box-shadow: 0 0 20px 1px cornflowerblue;
+}
+
+.Images1,.Images2 {
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+    display:block;
+    opacity:1;
+    transition : all .3s;
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(1.1);
+    transform: scale(1.05); 
+}
+
+
+ /* Style all social media icons */
+#firma{
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:black;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+ .fa {
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
