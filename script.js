@@ -1,6 +1,3 @@
- 
- // ---- // --- Old code 
-
 function oneRound(player,computer){
     if (player == computer){
         mensaje = "EMPATE!"
@@ -16,25 +13,29 @@ function oneRound(player,computer){
 
 function game(){
     let options = ['Piedra','Papel','Tijeras'];
-    let playerCount = 0;
-    let computerCount = 0;
-    let CentinelButton = 0;
+    let playerCount = 0;        //How many times player has won
+    let computerCount = 0;      //How many time computer has won
+    let CentinelButton = 0;     //
 
-    let Rock = document.querySelector('#Rock');
-    let Paper = document.querySelector("#Paper");
-    let Sissors = document.querySelector("#Sissors");
+    let Rock = document.querySelector('#Rock');         //To know when a player press Rock
+    let Paper = document.querySelector("#Paper");       //Press Paper
+    let Sissors = document.querySelector("#Sissors");   //Press sissors
 
-    let RockC = document.querySelector('#RockC');
+    let RockC = document.querySelector('#RockC');       //For computer images animations
     let PaperC = document.querySelector("#PaperC");
     let SissorsC = document.querySelector("#SissorsC");
 
-    let MensajeP = document.querySelector('p');
-    let elementB1 = document.querySelector('.Images1__b');
+    let PuntosYou = document.querySelector('#Results-you');             //Tow write the points on the board
+    let PuntosComputer = document.querySelector('#Results-computer')    //Same
+    let MensajeP = document.querySelector('#Message');
+
+    let elementB1 = document.querySelector('.Images1__b');              //
     let elementB2 = document.querySelector('.Images2__b');
 
     let one = '';
 
     function Transition(PC,Player){
+        // S is selected weapon, o1 and o2 are the others
         if(Player == 'Piedra' ){ s = Rock; o1 = Sissors; o2 = Paper};
         if(Player == 'Papel'  ){ o1 = Rock; o2 = Sissors; s = Paper};
         if(Player == 'Tijeras'){ o1 = Rock; s = Sissors; o2 = Paper};
@@ -45,11 +46,13 @@ function game(){
 
         let dur = 3000; //Duration of the animation
 
+        // Translate:
+        let dist = '20.8vh'
         s.animate([
             // keyframes
             { transform: 'translateY(0px)'   },
-            { transform: 'translateY(142px)' },
-            { transform: 'translateY(142px)' },
+            { transform: 'translateY(' + dist + ')' },
+            { transform: 'translateY(' + dist + ')' },
             { transform: 'translateY(0px)' }
           ], {
             // timing options
@@ -60,15 +63,14 @@ function game(){
           sc.animate([
             // keyframes
             { transform: 'translateY(0px)'   },
-            { transform: 'translateY(-142px)' },
-            { transform: 'translateY(-142px)' },
+            { transform: 'translateY(-' + dist + ')' },
+            { transform: 'translateY(-' + dist + ')' },
             { transform: 'translateY(0px)' }
           ], {
             // timing options
             duration: dur,
             iterations: 1
           });
-          
 
         o1.animate({opacity: 0 }, dur);
         o2.animate({opacity: 0 }, dur);
@@ -83,8 +85,10 @@ function game(){
         let PC_choice = options[Math.round(Math.random()*2)]; //Random number computer play. 
         one = oneRound(Player_choice,PC_choice);
 
-        GanasteOPerdiste(one);
-        MensajeP.textContent = "Computer: " + computerCount + " - You: " + playerCount;
+        GanasteOPerdiste(one);  
+        PuntosYou.textContent = playerCount;
+        PuntosComputer.textContent = computerCount;
+        console.log(computerCount);
         Fin(playerCount,computerCount);
         Transition(PC_choice,Player_choice);
     }
@@ -139,4 +143,3 @@ function Fin(playerCount,computerCount) {
 }
 
 game();
-

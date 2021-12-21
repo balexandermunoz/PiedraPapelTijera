@@ -11,18 +11,21 @@
     </head>
 
     <body>
+    <div class="flex-container"> <!-- Prueba -->
+
+    <div class="flex-child1">
      <h1>
         Rock, Paper, Scissors!
      </h1>
-     <h2>
+     <h2 id="Message">
          Choose wisely...
      </h2>
 
      <div class="Images1">
-     <b class="Images1__b"> You: </b>
-     <img src="Images/Rock2.png" alt="Rock icon" style="width:120px;height:120px;" class="Images__img" id='Rock'>
-     <img src="Images/PaperFunny.png" alt="Paper icon" style="width:120px;height:120px;" class="Images__img" id="Paper">
-     <img src="Images/Sissors.png" alt="Sissors icon" style="width:120px;height:120px;" class="Images__img" id="Sissors">
+        <b class="Images1__b"> You: </b>
+        <img src="Images/Rock2.png" alt="Rock icon" style="width:120px;height:120px;" class="Images__img" id='Rock'>
+        <img src="Images/PaperFunny.png" alt="Paper icon" style="width:120px;height:120px;" class="Images__img" id="Paper">
+        <img src="Images/Sissors.png" alt="Sissors icon" style="width:120px;height:120px;" class="Images__img" id="Sissors">
     </div>
 
     <div class="Images2">
@@ -31,18 +34,29 @@
         <img src="Images/PaperFunny.png" alt="Paper icon" style="width:120px;height:120px;" class="Images__img_2" id="PaperC">
         <img src="Images/Sissors.png" alt="Sissors icon" style="width:120px;height:120px;" class="Images__img_2" id="SissorsC">
     </div>
+    </div> <!--Flex child 1-->
 
     <div class = Results>
-     <p>
-         <!-- Js insert results here -->
-     </p>
-     
-     <div id="Firma">
+        <table id="customers">
+            <tr>
+              <th>You</th>
+              <th>Computer</th>
+            </tr>
+            <tr>
+              <td id="Results-you">0</td>
+              <td id="Results-computer">0</td>
+            </tr>
+          </table>
+    </div>
+
+    </div> <!-- Close flex container -->
+
+
+    <div id="Firma">
         <p>Made by: Brayan Muñoz.</p> 
         <p><a href="https://www.instagram.com/caos_s.a/" target="_blank" rel="noopener noreferrer" class="fa fa-instagram"></a></p>
         <p><a href="https://www.linkedin.com/in/balexandermunoz/" target="_blank" rel="noopener noreferrer" class="fa fa-linkedin" ></a></p>
     </div>
 
-    </div>
     </body>
 </html>
